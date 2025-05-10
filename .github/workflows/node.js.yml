@@ -14,5 +14,10 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '20'
+
       - run: npm install
-      - run: npm test
+
+      - name: Run Tests
+        run: |
+          chmod +x ./node_modules/.bin/jest
+          ./node_modules/.bin/jest
